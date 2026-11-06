@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    /* Before first paint: stored theme and language, so nothing flashes. */
+    try {
+      var s = localStorage.getItem("color-scheme");
+      document.querySelector('meta[name="color-scheme"]').content = s || "light dark";
+      var l = localStorage.getItem("lang") || ((navigator.language || "en").toLowerCase().indexOf("fr") === 0 ? "fr" : "en");
+      document.documentElement.lang = l;
+    } catch (e) {}
+  </script>
+  <title>Ahmed Kharroubi — Web developer · Websites, e-commerce & automation</title>
+  <meta name="description" content="Ahmed Kharroubi designs and builds fast, modern websites, online stores, booking platforms and business automation in Tunisia.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfbfd">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+  <link rel="canonical" href="https://ahmedkharroubi.qd.je/">
+  <link rel="alternate" hreflang="en" href="https://ahmedkharroubi.qd.je/?lang=en">
+  <link rel="alternate" hreflang="fr" href="https://ahmedkharroubi.qd.je/?lang=fr">
+  <link rel="alternate" hreflang="x-default" href="https://ahmedkharroubi.qd.je/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmedkharroubi.qd.je/">
+  <meta property="og:title" content="Ahmed Kharroubi — Web developer">
+  <meta property="og:description" content="Websites, online stores, booking platforms and business automation.">
+  <meta property="og:image" content="https://ahmedkharroubi.qd.je/assets/og.png">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" as="image" href="assets/work/smells.webp" fetchpriority="high">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmed Kharroubi",
+    "url": "https://ahmedkharroubi.qd.je/",
+    "jobTitle": "Web developer",
+    "email": "mailto:ahmedkharroubi61@gmail.com",
+    "telephone": "+21655157095",
+    "address": { "@type": "PostalAddress", "addressCountry": "TN" },
+    "sameAs": ["https://www.linkedin.com/in/ahmed-kharroubi-0179a1449/", "https://github.com/ahmedkharroubi61-hash"],
+    "knowsLanguage": ["en", "fr", "ar"]
+  }
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Ahmed Kharroubi — home">
+        <span class="brand__mark" aria-hidden="true">
+          <span class="mono">AK</span>
+        </span>
+        <span class="brand__name">Ahmed Kharroubi</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Main">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#now" data-i18n="nav.now">Now</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__tools">
+        <button class="icon-btn kbd-btn" type="button" id="cmd-trigger" data-i18n-aria="cmd.open" aria-label="Quick actions" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <kbd>K</kbd>
+        </button>
+
+        <!-- Language menu -->
+        <div class="lang">
+          <button class="lang__trigger" id="lang-trigger" type="button" aria-haspopup="menu" aria-expanded="false" commandfor="lang-menu" command="toggle-popover">
+            <span class="flag" data-flag-current aria-hidden="true"></span>
+            <span class="lang__code" data-lang-code>EN</span>
+            <svg class="chev" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="sr-only" data-i18n="nav.language">Language</span>
+          </button>
+          <div id="lang-menu" class="lang__menu" popover="auto">
+            <div focusgroup="menu nomemory" aria-labelledby="lang-trigger">
+              <div role="group" aria-label="Language">
+                <button type="button" role="menuitemradio" aria-checked="false" data-set-lang="en" lang="en">
+                  <span class="flag flag--uk" aria-hidden="true"></span><span>English</span><span class="hint" aria-hidden="true">EN</span>
+                </button>
+                <button type="button" role="menuitemradio" aria-checked="false" data-set-lang="fr" lang="fr">
+                  <span class="flag flag--fr" aria-hidden="true"></span><span>Français</span><span class="hint" aria-hidden="true">FR</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Theme toggle: system (shown as its resolved value) or the opposite -->
+        <button class="icon-btn theme-btn" type="button" id="theme-toggle">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span class="sr-only t-dark" data-i18n="theme.toDark">Switch to dark theme</span>
+          <span class="sr-only t-light" data-i18n="theme.toLight">Switch to light theme</span>
+        </button>
+
+        <a class="btn btn--primary btn--sm nav__cta" href="#contact" data-i18n="nav.talk">Let's talk</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <a class="pill" href="#contact">
+            <span class="dot dot--live" aria-hidden="true"></span>
+            <span data-i18n="hero.badge">Available for new projects</span>
+            <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <h1 id="hero-title" class="hero__title">
+            <span class="line" data-i18n="hero.title.a">I build websites &amp; products</span>
+            <span class="line grad" data-i18n="hero.title.b">that businesses run on.</span>
+          </h1>
+          <p class="hero__lead" data-i18n="hero.lead">I'm Ahmed Kharroubi, a web developer based in Tunisia. I design, build and launch fast websites, online stores and booking platforms — and I'm now focused on automation that saves businesses hours every single day.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#work">
+              <span data-i18n="hero.cta.work">See my work</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 3v10m0 0 4-4m-4 4L4 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact" data-i18n="hero.cta.contact">Start a project</a>
+          </div>
+
+          <dl class="stats">
+            <div><dt data-i18n="hero.stat.projects">featured projects</dt><dd><span data-count="5">5</span></dd></div>
+            <div><dt data-i18n="hero.stat.live">live in production</dt><dd><span data-count="4">4</span></dd></div>
+            <div><dt data-i18n="hero.stat.wip">automations that never take a break</dt><dd>24/7</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="stack3d" data-parallax>
+            <figure class="win win--back">
+              <div class="win__bar"><i></i><i></i><i></i><span>drivenow</span></div>
+              <img src="assets/work/drivenow.webp" alt="" width="1600" height="1000">
+            </figure>
+            <figure class="win win--mid">
+              <div class="win__bar"><i></i><i></i><i></i><span>bhc-bingo.com</span></div>
+              <img src="assets/work/bhc-split.webp" alt="" width="1600" height="1000">
+            </figure>
+            <figure class="win win--front">
+              <div class="win__bar"><i></i><i></i><i></i><span>smellscoffee.com</span></div>
+              <img src="assets/work/smells.webp" alt="" width="1600" height="1000" fetchpriority="high">
+            </figure>
+            <div class="chip chip--a"><span class="dot dot--live"></span>smellscoffee.com · <b data-i18n="hero.chip.live">Live</b></div>
+            <div class="chip chip--b"><span class="dot dot--live"></span>bhc-bingo.com · <b data-i18n="hero.chip.live">Live</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Stack marquee ============ -->
+    <section class="marquee" aria-labelledby="stack-title">
+      <h2 id="stack-title" class="marquee__title" data-i18n="stack.title">Tools I ship with</h2>
+      <div class="marquee__track">
+        <ul class="marquee__list">
+          <li>React</li><li>TypeScript</li><li>JavaScript</li><li>Vite</li><li>Node.js</li><li>Supabase</li><li>PostgreSQL</li><li>Cloudflare Workers</li><li>WhatsApp Cloud API</li><li>Twilio</li><li>Flouci</li><li>Three.js</li><li>Leaflet</li><li>GitHub Actions</li><li>Netlify</li><li>Vitest</li>
+        </ul>
+        <ul class="marquee__list" aria-hidden="true">
+          <li>React</li><li>TypeScript</li><li>JavaScript</li><li>Vite</li><li>Node.js</li><li>Supabase</li><li>PostgreSQL</li><li>Cloudflare Workers</li><li>WhatsApp Cloud API</li><li>Twilio</li><li>Flouci</li><li>Three.js</li><li>Leaflet</li><li>GitHub Actions</li><li>Netlify</li><li>Vitest</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Work ============ -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow"><span class="eyebrow__n">01</span><span data-i18n="work.eyebrow">Selected work</span></p>
+          <h2 id="work-title" class="sec-title" data-i18n="work.title">Real products, used by real businesses.</h2>
+          <p class="sec-lead" data-i18n="work.lead">Every project below is in use or in active development — from a café's ordering system to car-rental booking software. Open any project for the full story.</p>
+        </header>
+
+        <div class="filters reveal" role="radiogroup" data-i18n-aria="work.filters" aria-label="Filter projects">
+          <button type="button" role="radio" aria-checked="true" data-filter="all"><span data-i18n="work.filter.all">All</span> <span class="count" data-count-for="all"></span></button>
+          <button type="button" role="radio" aria-checked="false" data-filter="built"><span data-i18n="work.filter.built">Built by me</span> <span class="count" data-count-for="built"></span></button>
+          <button type="button" role="radio" aria-checked="false" data-filter="collab"><span data-i18n="work.filter.collab">Collaborations</span> <span class="count" data-count-for="collab"></span></button>
+        </div>
+
+        <ol class="projects" id="projects" aria-live="polite">
+          <!-- Rendered from assets/js/content.js -->
+        </ol>
+        <noscript><p class="sec-lead">SmellS by Borbone — smellscoffee.com · BHC Bingo — bhc-bingo.com · DriveNow · BGM Com Agency — bgmcom.agency · Tunisia Balloons — tunisiaballoons.com</p></noscript>
+      </div>
+    </section>
+
+    <!-- ============ Now: automation ============ -->
+    <section class="section now" id="now" aria-labelledby="now-title">
+      <div class="wrap now__inner">
+        <div class="now__copy reveal">
+          <p class="eyebrow"><span class="eyebrow__n">02</span><span data-i18n="now.eyebrow">Now</span></p>
+          <h2 id="now-title" class="sec-title" data-i18n="now.title">Now focused on automation that works while you sleep.</h2>
+          <p class="sec-lead" data-i18n="now.lead">Most small businesses lose hours every day answering the same messages, copying orders and chasing confirmations. I build automations that run those steps on their own — on the channels customers already use.</p>
+          <ul class="points">
+            <li>
+              <span class="points__i" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5h16v11H8l-4 4V5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+              <div><h3 data-i18n="now.p1.t">Answers in the customer's language</h3><p data-i18n="now.p1.d">Tunisian Derja in Latin or Arabic script, French, English and Arabic.</p></div>
+            </li>
+            <li>
+              <span class="points__i" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Zm0 0 9 4.5m0 0 9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+              <div><h3 data-i18n="now.p2.t">Only sells what's really in stock</h3><p data-i18n="now.p2.d">Real prices and stock from Shopify, WooCommerce or Google Sheets. No invented discounts.</p></div>
+            </li>
+            <li>
+              <span class="points__i" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><h3 data-i18n="now.p3.t">Closes the loop with your team</h3><p data-i18n="now.p3.d">Orders created, courier notified, confirmation calls placed, the owner kept informed.</p></div>
+            </li>
+          </ul>
+          <a class="btn btn--primary" href="#contact" data-i18n="now.cta">Automate my business</a>
+        </div>
+
+        <div class="flow reveal" id="flow">
+          <div class="flow__head">
+            <span class="flow__title"><span class="dot dot--live" aria-hidden="true"></span><span data-i18n="now.flow.label">A live workflow</span></span>
+            <button class="flow__run" type="button" id="flow-run">
+              <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 3.5v9l7-4.5-7-4.5Z" fill="currentColor"/></svg>
+              <span data-i18n="now.flow.run">Run</span>
+            </button>
+          </div>
+          <ol class="flow__steps">
+            <li class="node" style="--i:0">
+              <span class="node__ic node__ic--wa" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 2.6 6.5 6.4 6.6l.9-1.6-1.8-.9-.8.8c-1-.4-2-1.4-2.5-2.5l.8-.8-.9-1.8L9.5 9" fill="currentColor"/></svg></span>
+              <span class="node__t"><b data-i18n="now.flow.1">New WhatsApp message</b><small data-i18n="now.flow.1s">“Salam, 3andkom el crème?”</small></span>
+              <span class="node__ok" aria-hidden="true">✓</span>
+            </li>
+            <li class="node" style="--i:1">
+              <span class="node__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M6 6l2 2m8 8 2 2M6 18l2-2m8-8 2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              <span class="node__t"><b data-i18n="now.flow.2">Understands the request</b><small data-i18n="now.flow.2s">Product · quantity · language</small></span>
+              <span class="node__ok" aria-hidden="true">✓</span>
+            </li>
+            <li class="node" style="--i:2">
+              <span class="node__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Zm0 0 9 4.5m0 0 9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+              <span class="node__t"><b data-i18n="now.flow.3">Checks stock &amp; price</b><small data-i18n="now.flow.3s">Synced from your store</small></span>
+              <span class="node__ok" aria-hidden="true">✓</span>
+            </li>
+            <li class="node" style="--i:3">
+              <span class="node__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              <span class="node__t"><b data-i18n="now.flow.4">Confirms address &amp; total</b><small data-i18n="now.flow.4s">Price + delivery = total</small></span>
+              <span class="node__ok" aria-hidden="true">✓</span>
+            </li>
+            <li class="node node--end" style="--i:4">
+              <span class="node__ic node__ic--ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="node__t"><b data-i18n="now.flow.5">Order placed</b><small data-i18n="now.flow.5s">Courier notified · #A7K2</small></span>
+              <span class="node__ok" aria-hidden="true">✓</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Services ============ -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow"><span class="eyebrow__n">03</span><span data-i18n="services.eyebrow">Services</span></p>
+          <h2 id="services-title" class="sec-title" data-i18n="services.title">Everything you need to grow online — under one roof.</h2>
+        </header>
+        <ul class="bento">
+          <li class="card reveal bento--wide">
+            <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="4" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h3 data-i18n="services.s1.t">Websites &amp; landing pages</h3>
+            <p data-i18n="services.s1.d">Fast, responsive and search-friendly sites that make a strong first impression and turn visitors into clients.</p>
+            <div class="bento__art bento__art--speed" aria-hidden="true"><span>100</span><small>Performance</small></div>
+          </li>
+          <li class="card reveal">
+            <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 7h14l-1.2 11.1A2 2 0 0 1 15.8 20H8.2a2 2 0 0 1-2-1.9L5 7Zm4 0V6a3 3 0 0 1 6 0v1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+            <h3 data-i18n="services.s2.t">Online stores</h3>
+            <p data-i18n="services.s2.d">Catalogue, cart, checkout, cash on delivery or online payment with Flouci — plus the back-office to run it.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 10h17M8 3v4m8-4v4m-8 7h2m3 0h2m-7 3h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h3 data-i18n="services.s3.t">Booking &amp; management platforms</h3>
+            <p data-i18n="services.s3.d">Reservations, live availability, staff dashboards, planning and point-of-sale tailored to how you work.</p>
+          </li>
+          <li class="card reveal bento--wide bento--accent">
+            <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+            <h3 data-i18n="services.s4.t">Business automation</h3>
+            <p data-i18n="services.s4.d">WhatsApp, Instagram and Messenger ordering, notifications and workflows that connect the tools you already use.</p>
+            <div class="bento__art bento__art--chan" aria-hidden="true"><span>WhatsApp</span><span>Instagram</span><span>Messenger</span><span>Shopify</span><span>WooCommerce</span><span>Google Sheets</span></div>
+          </li>
+          <li class="card reveal">
+            <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+            <h3 data-i18n="services.s5.t">Multilingual &amp; accessible</h3>
+            <p data-i18n="services.s5.d">French, English and Arabic interfaces, readable contrast, cookie consent and the legal pages your business needs.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 15c-1.5 0-3-1.5-3-3 0-4 3-8 8-9-1 5-5 8-9 8m-3 2-2 4 4-2m3-9.5h.01" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3 data-i18n="services.s6.t">Launch &amp; care</h3>
+            <p data-i18n="services.s6.d">Domain, hosting, deployment, HTTPS, analytics and updates — so your site keeps working long after launch.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Process ============ -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow"><span class="eyebrow__n">04</span><span data-i18n="process.eyebrow">Process</span></p>
+          <h2 id="process-title" class="sec-title" data-i18n="process.title">From first message to launch day.</h2>
+        </header>
+        <ol class="steps">
+          <li class="reveal"><span class="steps__n">01</span><h3 data-i18n="process.p1.t">Discover</h3><p data-i18n="process.p1.d">We talk about your business, your customers and what success looks like. You get a clear scope and timeline.</p></li>
+          <li class="reveal"><span class="steps__n">02</span><h3 data-i18n="process.p2.t">Design</h3><p data-i18n="process.p2.d">A visual direction that fits your brand, with every screen planned on mobile and desktop before a line of code.</p></li>
+          <li class="reveal"><span class="steps__n">03</span><h3 data-i18n="process.p3.t">Build</h3><p data-i18n="process.p3.d">Clean, fast code, with regular previews you can click through and comment on as it takes shape.</p></li>
+          <li class="reveal"><span class="steps__n">04</span><h3 data-i18n="process.p4.t">Launch &amp; grow</h3><p data-i18n="process.p4.d">Domain, hosting and go-live handled. Then improvements, automation and support as you grow.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <header class="sec-head sec-head--center reveal">
+          <p class="eyebrow"><span class="eyebrow__n">05</span><span data-i18n="contact.eyebrow">Contact</span></p>
+          <h2 id="contact-title" class="sec-title" data-i18n="contact.title">Have a project in mind? Let's make it real.</h2>
+          <p class="sec-lead" data-i18n="contact.lead">Tell me a little about your business and what you need. I reply within 24 hours — usually much sooner.</p>
+        </header>
+
+        <div class="contact__grid">
+          <aside class="channels reveal">
+            <a class="channel channel--wa" href="https://wa.me/21655157095" target="_blank" rel="noopener">
+              <span class="channel__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Zm5.4 13.4c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z" fill="currentColor"/></svg></span>
+              <span class="channel__t"><b data-i18n="contact.whatsapp">WhatsApp</b><small data-i18n="contact.whatsapp.d">Fastest reply</small></span>
+              <span class="channel__go" aria-hidden="true">↗</span>
+            </a>
+            <a class="channel" href="tel:+21655157095">
+              <span class="channel__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 3.5h3.2l1.6 4.2-2 1.3a10 10 0 0 0 5.2 5.2l1.3-2 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5A15 15 0 0 1 2.5 6.2 2.5 2.5 0 0 1 5 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+              <span class="channel__t"><b data-i18n="contact.phone">Phone</b><small>+216 55 157 095</small></span>
+              <span class="channel__go" aria-hidden="true">↗</span>
+            </a>
+            <div class="channel channel--split">
+              <a class="channel__main" href="mailto:ahmedkharroubi61@gmail.com">
+                <span class="channel__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+                <span class="channel__t"><b data-i18n="contact.email">Email</b><small>ahmedkharroubi61@gmail.com</small></span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="ahmedkharroubi61@gmail.com">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                <span data-i18n="contact.copy">Copy</span>
+              </button>
+            </div>
+            <a class="channel" href="https://www.linkedin.com/in/ahmed-kharroubi-0179a1449/" target="_blank" rel="noopener">
+              <span class="channel__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4.5 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3 9h3v12H3V9Zm6 0h2.9v1.7c.5-.9 1.7-2 3.6-2 3.8 0 4.5 2.5 4.5 5.8V21h-3v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9V9Z" fill="currentColor"/></svg></span>
+              <span class="channel__t"><b data-i18n="contact.linkedin">LinkedIn</b><small data-i18n="contact.linkedin.d">Connect with me</small></span>
+              <span class="channel__go" aria-hidden="true">↗</span>
+            </a>
+            <div class="channel-foot">
+              <button class="link-btn" type="button" id="vcard">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="contact.vcard">Save my contact card</span>
+              </button>
+              <p class="clock"><span data-i18n="contact.local">Local time in Tunisia</span> · <time id="clock">--:--</time></p>
+            </div>
+          </aside>
+
+          <div class="form-card reveal">
+            <form id="contact-form" class="form" action="https://formsubmit.co/ahmedkharroubi61@gmail.com" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New project enquiry — ahmedkharroubi.qd.je">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="f-name" data-i18n="form.name">Your name</label>
+                  <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-errormessage="f-name-err">
+                  <p class="err" id="f-name-err" data-i18n="form.name.err">Please tell me your name.</p>
+                </div>
+                <div class="field">
+                  <label for="f-email"><span data-i18n="form.email">Email</span> <span class="hint-inline" id="f-email-hint" data-i18n="form.email.hint">So I can reply to you</span></label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" aria-describedby="f-email-hint" aria-errormessage="f-email-err">
+                  <p class="err" id="f-email-err" data-i18n="form.email.err">Please enter a valid email address, like you@example.com.</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="f-phone"><span data-i18n="form.phone">Phone / WhatsApp</span> <span class="hint-inline" data-i18n="form.optional">optional</span></label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40">
+              </div>
+
+              <fieldset class="field">
+                <legend data-i18n="form.type">What do you need?</legend>
+                <div class="choices">
+                  <label class="choice"><input type="radio" name="project_type" value="Website" checked><span data-i18n="form.type.website">Website</span></label>
+                  <label class="choice"><input type="radio" name="project_type" value="Online store"><span data-i18n="form.type.store">Online store</span></label>
+                  <label class="choice"><input type="radio" name="project_type" value="Booking platform"><span data-i18n="form.type.booking">Booking platform</span></label>
+                  <label class="choice"><input type="radio" name="project_type" value="Automation"><span data-i18n="form.type.automation">Automation</span></label>
+                  <label class="choice"><input type="radio" name="project_type" value="Other"><span data-i18n="form.type.other">Something else</span></label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="f-msg" data-i18n="form.message">Your project</label>
+                <textarea id="f-msg" name="message" rows="5" required minlength="10" maxlength="4000" data-i18n-ph="form.message.ph" placeholder="A few words about your business, your goals and your timing…" aria-errormessage="f-msg-err"></textarea>
+                <p class="err" id="f-msg-err" data-i18n="form.message.err">A short description helps me reply with the right answer.</p>
+              </div>
+
+              <div class="form__foot">
+                <button class="btn btn--primary btn--lg" type="submit" id="f-submit">
+                  <span class="btn__label" data-i18n="form.send">Send message</span>
+                  <svg class="btn__arrow" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="spinner" aria-hidden="true"></span>
+                </button>
+                <p class="form__privacy" data-i18n="form.privacy">Your details are only used to reply to you.</p>
+              </div>
+              <p class="form__fail" id="f-fail" role="alert" hidden>
+                <span data-i18n="form.fail">Your message couldn't be sent. Please try again, or reach me directly on WhatsApp.</span>
+                <a class="link" id="f-wa" href="https://wa.me/21655157095" target="_blank" rel="noopener" data-i18n="form.wa">Send on WhatsApp instead</a>
+              </p>
+            </form>
+
+            <div class="form-ok" id="f-ok" hidden tabindex="-1">
+              <div class="form-ok__check" aria-hidden="true"><svg viewBox="0 0 52 52" width="64" height="64"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 27 7 7 15-15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3 data-i18n="form.ok.t">Message sent — thank you!</h3>
+              <p data-i18n="form.ok.d">I've got your message and will get back to you within 24 hours.</p>
+              <button class="btn btn--ghost" type="button" id="f-again" data-i18n="form.again">Send another message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="footer__big" aria-hidden="true">Ahmed Kharroubi</span>
+        <p>© <span id="year">2026</span> Ahmed Kharroubi. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="https://www.linkedin.com/in/ahmed-kharroubi-0179a1449/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ahmedkharroubi61-hash" target="_blank" rel="noopener">GitHub</a>
+        <a href="#top" data-i18n="footer.top">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Project case study -->
+  <dialog class="case" id="case" aria-labelledby="case-title">
+    <div class="case__inner" id="case-body"></div>
+  </dialog>
+
+  <!-- Quick actions (⌘K / Ctrl K) -->
+  <dialog class="cmd" id="cmd" aria-label="Quick actions">
+    <div class="cmd__box">
+      <div class="cmd__search">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="cmd-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmd-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" data-i18n-ph="cmd.placeholder" placeholder="Type a command or search…">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="cmd__list" id="cmd-list" role="listbox"></ul>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
