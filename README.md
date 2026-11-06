@@ -25,8 +25,6 @@ Copy one of the objects in `PROJECTS` (`assets/js/content.js`) and fill it in:
 Put screenshots in `assets/work/` and list them in `shots` (and `mobile` for a phone screenshot).
 Without screenshots the card shows a drawn cover (`art: "bgm"` or `art: "balloons"`).
 
-**Please review the BGM Com Agency and Tunisia Balloons texts**: their sites could not be opened while building, so their descriptions stay general. Add your exact role and screenshots when you can.
-
 ## Put it online (GitHub Pages)
 
 GitHub Pages on a free account only publishes **public** repositories, so give the site its own public repository:
